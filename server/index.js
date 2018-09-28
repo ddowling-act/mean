@@ -11,9 +11,9 @@ app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
-
-insecureServer.listen(4400, function() {
-  console.log('Insecure Server listening on port 4400');
+var port = process.env.PORT || 4400;
+insecureServer.listen(port, function() {
+  console.log('Insecure Server listening on port ' + port);
 });
 
 const existingBookings = [{

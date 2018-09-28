@@ -11,10 +11,7 @@ import { IBooking } from './models/IBooking.model';
 export class AppComponent implements OnInit {
   public existingBookings = [];
   public nameOnBooking: string;
-  public bookingDate: Date;
-
-  private hostAddress: 'localhost:4400';
-  private bookingEndpoint = '/bookings';
+  public bookingDate: string;
 
   constructor(private http: HttpClient) {
   }
@@ -22,11 +19,10 @@ export class AppComponent implements OnInit {
   public makeBooking() {
     const booking: IBooking = {
       name: this.nameOnBooking,
-      date: this.bookingDate.toISOString()
+      date: this.bookingDate
     };
 
-    const url = this.getFullUrl(this.bookingEndpoint);
-    return this.http.post<IBooking>(url, booking).toPromise().then((response: any) => {
+    return this.http.post<IBooking>('/api/bookings', booking).toPromise().then((response: any) => {
       this.existingBookings = response.bookings;
     });
   }
@@ -35,14 +31,9 @@ export class AppComponent implements OnInit {
     this.getExistingBookings();
   }
 
-  private getFullUrl(endpoint: string) {
-    return this.hostAddress + endpoint;
-  }
-
   private getExistingBookings() {
-    const url = this.getFullUrl(this.bookingEndpoint);
 
-    return this.http.get<IGetBookingsResponse>(url).toPromise().then((response: any) => {
+    return this.http.get<IGetBookingsResponse>('/api/bookings').toPromise().then((response: any) => {
       this.existingBookings = response.bookings;
     });
   }

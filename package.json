@@ -1,7 +1,7 @@
 {
   "name": "act-parking",
   "version": "0.0.0",
-  "engines" : { "node" : ">=8.9" }
+  "engines" : { "node" : ">=8.9" },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

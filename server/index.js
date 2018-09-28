@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-http = require('http');
+var http = require('http');
 var insecureServer = http.createServer(app);
 var router = express.Router();
 

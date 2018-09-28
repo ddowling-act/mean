@@ -13,7 +13,7 @@ module.exports = {
   // Binding to 127.0.0.1 is safer in production.
   host: process.env.HOST || '0.0.0.0',
   db: {
-    uri: process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean',
+    uri: 'mongodb://ddowling:ZUZv2aYkbaSXAZkKamgjF2swvXYkH4IzddsTwTe4LPC09LDl9Ybqu98ASgs5x65l1ddhSJov1jvIfkblbwZZ5Q==@ddowling.documents.azure.com:10255/?ssl=true',
     options: {
       user: '',
       pass: ''

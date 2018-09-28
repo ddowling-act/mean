@@ -1,9 +1,9 @@
 {
   "name": "act-parking",
   "version": "0.0.0",
+  "engines" : { "node" : ">=8.9", "npm" : ">=6.1.0" },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -11,6 +11,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~6.2.3",
+	"typescript": "~2.9.2",
     "@angular/animations": "^6.1.0",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
@@ -28,7 +30,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",
-    "@angular/cli": "~6.2.3",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
     "@types/jasmine": "~2.8.8",
@@ -44,7 +45,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tslint": "~5.11.0",
-    "typescript": "~2.9.2"
+    "tslint": "~5.11.0"
   }
 }

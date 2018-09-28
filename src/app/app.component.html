@@ -5,7 +5,18 @@
   </h1>
   <div *ngFor="let booking of existingBookings">
     <span>{{ booking.name }}</span>
-    <span>{{ booking.date }}</span>
+    <span>{{ booking.date | date }}</span>
+  </div>
+
+
+  <div style="width:30%; height:400px; border:1px solid black">
+    <span style="display:block">Name</span>
+    <input type="text" style="width:80%; margin-bottom:16px" [(ngModel)]="nameOnBooking"> 
+    <span style="display:block">Date</span>
+    <input type="date" style="width:80%; margin-bottom:16px" [(ngModel)]="bookingDate"> 
+    <div style="display:block">
+      <button (click)="makeBooking()">Book</button>
+    </div>
   </div>
  
 </div>
